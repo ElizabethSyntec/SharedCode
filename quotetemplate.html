@@ -1,0 +1,197 @@
+<div><style media="all" type="text/css">
+#lineItem tr {
+    page-break-inside: avoid;
+    page-break-after:auto;
+}
+</style>
+
+<div style="font-family: Open Sans; font-size: 10pt; color: #333333;">
+    <div style="padding: 0.5in 0.40in 0.5in 0.55in;">
+
+        <div style="display:table; width:100%;">
+            <div style="float:left; width:50%;">
+                <div>
+                    <img src="https://media.istockphoto.com/vectors/square09stampsred-vector-id1159467141?s=170667a" height="60">
+                </div>
+                <strong>Sample Company Ltd</strong>
+                <br>
+                <div>
+                    <span style="white-space: pre-wrap;" id="tmp_org_address">Street 1<br>Street 2<br>City POST CODE<br>United Kingdom</span>
+                </div>
+            </div>
+            <div style="float: right; width: 50%; text-align: right;">
+                <span style="font-size: 28pt; color: #000000; font-weight: bold;">Quote</span>
+                <br>
+                <span id="tmp_entity_number" style="font-size: 10pt; color: #817d7d;"><strong>Quote # ${Quotes.Quote Reference}</strong></span>
+            </div>
+        </div>
+
+        <table style="width: 100%; margin-top: 30px; table-layout: fixed; border-spacing: 0; border-collapse: collapse;">
+            <tbody>
+                <tr>
+
+                    <td style="width: 50%; vertical-align: top; word-wrap: break-word;">
+                        <div>
+                            <label style="font-size: 9pt; color: #817d7d;" id="tmp_billing_address_label">Customer</label>
+                            <br><span style="font-size: 10pt;">${Quotes.Account Name}</span><br><span style="font-size: 10pt;">${Quotes.Contact Name}</span><br>
+                            <span style="white-space: pre-wrap; font-size: 10pt;" id="tmp_billing_address">${Quotes.Billing Street}<br>${Quotes.Billing City} ${Quotes.Billing Code}<br>${Quotes.Billing Country}</span>
+                        </div>
+                    </td>
+
+                    <td style="vertical-align: top; word-wrap: break-word;" align="right">
+
+                        <table style="width: 200px; height: 96px; table-layout: fixed; word-wrap: break-word; border-spacing: 0; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 5px 10px 5px 0px; font-size: 10pt; text-align: right;">
+                                        <span style="color: #817d7d;">Quote Date :</span>
+                                    </td>
+                                    <td style="text-align: right; font-size: 10pt;">${Quotes.Date First Issued}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px 10px 5px 0px; font-size: 10pt; text-align:right;">
+                                        <span style="color: #817d7d;">Expiry Date :</span>
+                                    </td>
+                                    <td style="text-align: right; font-size: 10pt;">
+                                        <span id="tmp_due_date">${Quotes.Valid Till}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px 10px 5px 0px; font-size: 10pt; text-align:right;">
+                                        <span style="color: #817d7d;">Project Code :</span>
+                                    </td>
+                                    <td style="text-align: right; font-size: 10pt;">
+                                        <span id="tmp_project_code">${Quotes.Project Code}</span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 20px; width:100%;">
+            <span>
+                <label style="font-size: 9pt;color: #817d7d;">${Quotes.Subject}</label>
+            </span>
+        </div>
+
+        <table style="width: 100%; margin-top: 20px; table-layout: fixed; border-spacing: 0; border-collapse: collapse;" class="pcs-itemtable" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr style="height: 32px;">
+                    <td style="font-size: 10pt; font-weight: bold; padding:5px 10px 5px 10px; word-wrap: break-word; width: 45%;border-bottom: 1px solid #000000;">
+                        Item &amp; Description
+                    </td>
+                    <td style="font-size: 10pt; font-weight: bold; padding:5px 10px 5px 10px; word-wrap: break-word; width: 10%;border-bottom: 1px solid #000000;" align="right">
+                        Qty
+                    </td>
+                    <td style="font-size: 10pt; font-weight: bold; padding:5px 10px 5px 10px; word-wrap: break-word; width: 15%;border-bottom: 1px solid #000000;" align="right">
+                        Price
+                    </td>
+                    <td style="font-size: 10pt; font-weight: bold; padding:5px 10px 5px 10px; word-wrap: break-word; width: 15%;border-bottom: 1px solid #000000;" align="right">
+                        Amount
+                    </td>
+                    <td style="font-size: 10pt; font-weight: bold; padding:5px 10px 5px 10px; word-wrap: break-word; width: 15%;border-bottom: 1px solid #000000;" align="right">
+                        VAT
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="subform_1" class="QuotedItems">
+                <tr>
+                    <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 0px 10px 10px;" valign="top">
+                        <span style="word-wrap: break-word;" id="tmp_item_name">${Products.Product Name}</span>
+                        <br>
+                        <span style="color: #727272; font-size: 9pt; white-space: pre-wrap; word-wrap: break-word;" id="tmp_item_description">${Quoted Items.Description}</span>
+                    </td>
+                    <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 5px 10px; text-align: right; word-wrap: break-word;" valign="top">
+                        <span id="tmp_item_qty">${Quoted Items.Quantity}</span>
+                        <br>
+                    </td>
+                    <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000; padding: 10px 10px 5px 10px; text-align:right; word-wrap: break-word;" valign="top">
+                        <span id="tmp_item_rate">${Quoted Items.List Price}</span>
+                        <br>
+                    </td>
+                    <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000;text-align: right; padding: 10px 10px 10px 5px; word-wrap: break-word;" valign="top">${Quoted Items.Amount}
+                        <br>
+                    </td>
+                    <td style="font-size: 9pt; border-bottom: 1px solid #e3e3e3; background-color: #ffffff; color: #000000;text-align: right; padding: 10px 10px 10px 5px; word-wrap: break-word;" valign="top">${Quoted Items.Tax}
+                        <br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="width: 100%; margin-top: 1px;">
+            <div style="width: 45%; padding: 3px 10px 3px 3px; font-size: 9pt; float: left;">
+                <div style="white-space: pre-wrap;"></div>
+            </div>
+            <div style="width: 50%; float: right;">
+                <table style="font-size: 9pt; color: #000000; background-color: #ffffff; border-spacing: 0; border-collapse: collapse;" border="0" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 5px 10px 5px 0;" align="right" valign="middle">Sub Total</td>
+                            <td id="tmp_subtotal" style="width: 120px; padding: 10px 10px 10px 5px;" align="right" valign="middle">
+                                ${Quotes.Sub Total}
+                                <br>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody id="taxItems">
+                        <tr style="height: 10px;">
+                            <td style="padding: 5px 10px 5px 0;" align="right" valign="middle">
+                                VAT
+                                <br>
+                            </td>
+                            <td style="width: 120px; padding: 10px 10px 10px 5px;" align="right" valign="middle">
+                                ${Quotes.VAT}
+                                <br>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr style="height: 40px; font-size: 10pt; color: #000000;">
+                            <td style="padding: 5px 10px 5px 0; border-top: 1px solid #000000;" align="right" valign="middle">
+                                <strong>Total</strong>
+                            </td>
+                            <td id="tmp_balance_due" style="width: 120px; padding: 10px 10px 10px 5px; border-top: 1px solid #000000" align="right" valign="middle">
+                                <strong>${Quotes.Grand Total}</strong>
+                                <br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <br><br><br>
+
+        <table>
+            <tbody><tr>
+                <td style="width: 50%; vertical-align: top; padding-right: 15px;">
+                    <label style="font-size: 10pt; color: #817d7d;">Sales Contact</label><br>
+                    <p style="margin-top: 7px; white-space: pre-wrap; word-wrap: break-word; font-size: 8pt;">${Quotes.Quote Owner} (${Quotes.Quote Owner Email})</p><br>
+                    <label style="font-size: 10pt; color: #817d7d;" id="tmp_notes_label">Notes</label><br>
+                    <p style="margin-top: 7px; white-space: pre-wrap; word-wrap: break-word; font-size: 8pt;">${Quotes.Description}</p>
+                </td>
+                <td style="width: 50%; vertical-align: top;">
+                    <label style="font-size: 10pt; color: #817d7d;" id="tmp_terms_label">Terms &amp; Conditions</label><br>
+                    <p style="margin-top: 7px; white-space: pre-wrap; word-wrap: break-word; font-size: 8pt;">This quotation is subject to COMPANY’s standard Terms and Conditions viewable online <a href="#" style="text-decoration: none; color: #F8AB12;">here</a>. <br><br>Prices are subject to price increases by manufacturers and we reserve the right for any pricing given to be subject to change at any time. <br><br>${Quotes.Terms and Conditions }</p>
+                </td>
+            </tr>
+        </tbody></table>
+
+        <div style="text-align: center; page-break-inside: avoid; page-break-after: auto;">
+            <br><br>
+            <hr style="border: none; background-color: #817d7d; color: #817d7d; height: 1px">
+            <span style="font-size: 10px; font-color: #817d7d;">
+                VAT: VATNUMBERHERE | Company Registration: REGISTRATIONHERE | Phone: PHONEHERE | Email: EMAILHERE
+            </span>
+        </div>
+
+    </div>
+
+</div></div>
